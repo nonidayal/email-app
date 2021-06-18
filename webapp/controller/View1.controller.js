@@ -8,7 +8,7 @@ sap.ui.define([
 
 		},
 		onSendMail: function () {
-			// var that = this;
+			var that = this;
 			Email.send({
 				Host: "smtp.elasticemail.com",
 				Username: "knonidayal@gmail.com",
@@ -16,9 +16,9 @@ sap.ui.define([
 				To: "nonidalal32@gmail.com",
 				From: "knonidayal@gmail.com",
 				Subject: "Selected tab is " +
-					this.getView().byId("idIconTabBarNoIcons").getSelectedKey(),
+					that.getView().byId("idIconTabBarNoIcons").getSelectedKey(),
 				Body: "And this is the body",
-			}.bind(this)).then((message) => alert(message));
+			}).then((message) => alert(message));
 		}
 	});
 });
